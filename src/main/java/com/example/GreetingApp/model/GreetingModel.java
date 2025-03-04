@@ -12,6 +12,8 @@ public class GreetingModel {
     private Long id;
     private String message;
 
+    public GreetingModel() {
+    }
     public GreetingModel(String message){
         this.message=message;
     }
@@ -28,4 +30,6 @@ public class GreetingModel {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
 }

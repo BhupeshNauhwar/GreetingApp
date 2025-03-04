@@ -29,7 +29,7 @@ public class GreetingService {
         }
 
     }
-    public String getGreetingMessageTosave(String firstName, String lastName) {
+    public GreetingModel getGreetingMessageTosave(String firstName, String lastName) {
         String  message;
         if (firstName != null && lastName != null) {
             message="Hello, " + firstName + " " + lastName + "!";
@@ -40,7 +40,10 @@ public class GreetingService {
         } else {
             message= "Hello World";
         }
-        greetingRepository.save(new GreetingModel(message));
-        return message;
+        GreetingModel greeting=new GreetingModel(message);
+        return greetingRepository.save((greeting));
     }
+
+
+
 }
