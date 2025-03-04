@@ -46,4 +46,36 @@ public class GreetingController {
         String message = greetingService.getGreetingMessageWithName(firstName, lastName);
         return new Greeting(message);
     }
+
+    @GetMapping("/greeting-save")
+    public  String getGreetingDetails(
+            @RequestParam(required = false) String firstName,
+            @RequestParam(required = false) String lastName){
+        return greetingService.getGreetingMessageTosave(firstName,lastName);
+    }
+    @PostMapping("/greeting-save")
+    public String saveGreeting(@RequestBody GreetingRequest request){
+        return greetingService.getGreetingMessageTosave(request.getFirstName(),request.getLastName());
+    }
+
+    public static class GreetingRequest{
+        private String firstName;
+        private String lastName;
+
+        public String getFirstName(){
+            return firstName;
+        }
+        public String getLastName(){
+            return lastName;
+        }
+
+        public void setFirstName(String firstName){
+            this.firstName=firstName;
+        }
+
+        public  void setLastName(String lastName){
+            this.lastName=lastName;
+        }
+    }
+
 }
