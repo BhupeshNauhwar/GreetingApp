@@ -14,12 +14,12 @@ public class GreetingController {
 
     @PostMapping
     public Greeting postGreeting(@RequestBody Greeting request) {
-        return new Greeting("Hello from POST, received: " );
+        return new Greeting("Hello from POST, received: "+request.getMessage() );
     }
 
     @PutMapping
     public Greeting putGreeting(@RequestBody Greeting request) {
-        return new Greeting("Hello from PUT, updated: " );
+        return new Greeting("Hello from PUT, updated: "+ request.getMessage());
     }
 
     @DeleteMapping
