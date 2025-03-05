@@ -17,6 +17,7 @@ Welcome to GreetingApp, a Spring Boot application designed to manage and showcas
 ✅ CRUD Operations for Greeting Messages.✅ User Authentication using JWT-based login and registration.✅ H2 In-Memory Database for easy data storage.✅ Spring Security Configuration allowing unrestricted API access.✅ Swagger Integration for interactive API testing.✅ RESTful API Architecture for structured responses.
 
 📌 API Endpoints
+
 📝 Greeting Controller
 
 | Method | Endpoint                                  | Description                          |
