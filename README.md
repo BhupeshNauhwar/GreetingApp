@@ -57,10 +57,15 @@ Welcome to GreetingApp, a Spring Boot application designed to manage and showcas
 📖 Learning from This Project
 
 🔹 Spring Boot Basics - REST API development, dependency injection, and configuration.
+
 🔹 Spring Security - Implementing authentication & authorization with JWT.
+
 🔹 Swagger (OpenAPI 3.0) - Auto-generating API documentation.
+
 🔹 H2 Database - Managing data in an in-memory database.
+
 🔹 Spring Boot Configuration - Using application.properties for database and email setup.
+
 🔹 Handling API Requests - Implementing GET, POST, PUT, and DELETE requests.
 
 💡 Technologies Used
