@@ -84,4 +84,27 @@ public class AuthServices {
         return "Login Succsfull and token: "+token;
 
     }
+
+
+    public  String forgetPassword(String email){
+
+        if (email == null || email.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email is required");
+        }
+        Optional<AuthUser> userOptional=authRepository.findByEmail(email);
+        if (userOptional.isEmpty()){
+            return "User not found:"+email;
+        }
+        AuthUser foundUser=userOptional.get();
+
+        String  resetToken=jwtUtil.generateToken(email);
+        foundUser.setResetToken(resetToken);
+        authRepository.save(foundUser);
+        String resetLink="http://localhost:8080/reset-password?token="+resetToken;
+
+        emailService.sendResetEmail(email,resetLink);
+
+        return "Reset password link sent to:"+email;
+
+    }
 }
