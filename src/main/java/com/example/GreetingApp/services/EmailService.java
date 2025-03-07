@@ -28,8 +28,9 @@ public class EmailService {
         mailSender.send(emailMessage);
     }
 
-    public void sendResetEmail(String email, String resetLink){
+    public void sendResetEmail(String email, String resetToken){
        try {
+           String resetLink="http://localhost:8080/auth/reset-password?token="+resetToken;
             MimeMessage message=mailSender.createMimeMessage();
             MimeMessageHelper helper=new MimeMessageHelper(message,true);
             helper.setTo(email);

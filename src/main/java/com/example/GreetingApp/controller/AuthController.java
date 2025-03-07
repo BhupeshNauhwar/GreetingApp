@@ -2,6 +2,7 @@ package com.example.GreetingApp.controller;
 
 import com.example.GreetingApp.DTO.AuthDTO;
 import com.example.GreetingApp.DTO.LoginDTO;
+
 import com.example.GreetingApp.services.AuthServices;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -62,5 +63,7 @@ public class AuthController {
     public ResponseEntity<String> forgetPassword(@RequestBody AuthDTO authDTO){
         return ResponseEntity.ok(authServices.forgetPassword(authDTO.getEmail()));
     }
+
+
 
 }
