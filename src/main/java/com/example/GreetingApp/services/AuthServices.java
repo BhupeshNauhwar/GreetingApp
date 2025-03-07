@@ -100,11 +100,13 @@ public class AuthServices {
         String  resetToken=jwtUtil.generateToken(email);
         foundUser.setResetToken(resetToken);
         authRepository.save(foundUser);
-        String resetLink="http://localhost:8080/reset-password?token="+resetToken;
 
-        emailService.sendResetEmail(email,resetLink);
+
+        emailService.sendResetEmail(email,resetToken);
 
         return "Reset password link sent to:"+email;
 
     }
+
+
 }
